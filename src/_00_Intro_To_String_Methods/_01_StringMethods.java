@@ -129,14 +129,37 @@ public class _01_StringMethods {
     // occurrence of String substring and the final occurrence
     // You can assume that substring will appear at least twice
     public static int distance(String s, String substring) {
+        int firstSub = s.indexOf(substring);
+        int finalSub = firstSub;
         
-    	return 0;
+        int index = 0;
+        do {
+        	index = s.indexOf(substring, finalSub + 1);
+        	if (index != -1) {
+        		finalSub = index;
+        	}
+        } while (index != -1);
+        
+    	return finalSub - firstSub - substring.length();
     }
 
     // Return true if String s is a palindrome
     // palindromes are words or phrases are read the same forward as backward.
     // HINT: ignore/remove all punctuation and spaces in the String
     public static boolean palindrome(String s) {
+    	
+    	StringBuilder sb = new StringBuilder(s);
+    	System.out.println(s);
+    	s = s.toLowerCase();
+    	
+    	for (int i = 0; i < s.length(); i++) {
+    		if (!Character.isAlphabetic(s.charAt(i))) {
+    			sb.deleteCharAt(i);
+    		}
+    	}
+    	
+    	System.out.println(s);
+    	
         return true;
     }
 }
