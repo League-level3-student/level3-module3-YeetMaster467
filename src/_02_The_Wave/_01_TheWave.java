@@ -21,6 +21,11 @@ public class _01_TheWave {
     
     public static ArrayList<String> wave(String str) {
         
-        return null;
+    	StringBuilder sb = new StringBuilder(str);
+    	ArrayList<String> arr = new ArrayList<String>();
+    	
+    	
+    	
+        return arr;
     }
 }
