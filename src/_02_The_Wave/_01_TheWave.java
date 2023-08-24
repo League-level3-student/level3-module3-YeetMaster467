@@ -24,7 +24,20 @@ public class _01_TheWave {
     	StringBuilder sb = new StringBuilder(str);
     	ArrayList<String> arr = new ArrayList<String>();
     	
-    	
+    	for (int i = 0; i < str.length(); i++) {
+    		sb = new StringBuilder(str);
+    		if (!Character.isWhitespace(sb.charAt(i))) {
+    			sb.setCharAt(i, Character.toUpperCase(sb.charAt(i)));
+    			arr.add(sb.toString());
+    		} else {
+    			i++;
+    			if (i >= str.length()) {
+    				break;
+    			}
+    			sb.setCharAt(i, Character.toUpperCase(sb.charAt(i)));
+    			arr.add(sb.toString());
+    		}
+    	}
     	
         return arr;
     }
